@@ -747,7 +747,7 @@
     "character": "Various protagonists",
     "id": 75,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "それもまた一興",
@@ -757,7 +757,7 @@
     "character": "Nobunaga Oda",
     "id": 76,
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "japanese": "世界を救うって、そういうことだろ？",
@@ -766,7 +766,7 @@
     "game": "Persona 5 Strikers",
     "character": "Joker",
     "id": 77,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
