@@ -78,7 +78,7 @@ const FloatingKanji = memo(
           transform: 'translate(-50%, -50%)', // Center the character on the position
           animationDelay: `${delay}s`,
           // @ts-expect-error - CSS variable for float animation
-          '--float-distance': '-12px',
+          '--float-distance': '-10px',
         }}
       >
         {useButtonStyle ? <span className='text-(--background-color)'>{char}</span> : char}

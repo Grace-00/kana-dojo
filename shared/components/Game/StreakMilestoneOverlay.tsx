@@ -305,11 +305,11 @@ export default function StreakMilestoneOverlay({
             <motion.button
               variants={itemVariants}
               className={cn(
-                'inline-flex h-24 w-24 items-center justify-center rounded-4xl border-b-16 border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) transition-all duration-200',
-                'motion-safe:animate-float [--float-distance:-6px]',
+                'inline-flex h-28 w-28 items-center justify-center rounded-4xl border-b-20 border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) transition-all duration-200',
+                'motion-safe:animate-float [--float-distance:-8px]',
               )}
             >
-              <Flame className='h-14 w-14' strokeWidth={2.5} />
+              <Flame className='h-16 w-16' strokeWidth={2.5} />
             </motion.button>
 
             <motion.h2
