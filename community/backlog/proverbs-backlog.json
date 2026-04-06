@@ -933,7 +933,7 @@
     "english": "An inch ahead is darkness",
     "meaning": "The future is uncertain",
     "completed": false,
-    "issued": false
+    "issued": true
   },
   {
     "id": 105,
@@ -1481,7 +1481,7 @@
     "romaji": "Hayaoki wa sanmon no toku",
     "english": "Early rising brings three coins of benefit",
     "meaning": "Wake early for advantage",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

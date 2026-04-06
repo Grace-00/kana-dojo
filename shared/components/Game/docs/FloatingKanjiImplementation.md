@@ -92,28 +92,56 @@ const getBaseRadius = (viewportWidth: number, charSize: number): number => {
 
 The positioning algorithm uses rejection sampling to place characters randomly while respecting constraints:
 
+**Viewport Deadzone Guarantee:**
+
+To ensure characters never extend outside the viewport, a deadzone is enforced on all edges:
+
+- **Deadzone size**: Equal to `charSize` (100% of character size)
+- **Why it works**: Characters use `translate(-50%, -50%)` CSS transform, so they extend `charSize/2` in each direction from their center point
+- **Safety margin**: Using full `charSize` provides extra buffer beyond the minimum `charSize/2` requirement
+- **Result**: Character centers can only be placed in the safe zone, guaranteeing they never clip at viewport edges
+- **Example**: For 36px character → 36px deadzone on each edge (top, right, bottom, left)
+
+**Visual representation:**
+
+```
+┌─────────────────────────────────────┐
+│ ← deadzone (charSize)               │
+│   ┌─────────────────────────────┐   │
+│   │                             │   │
+│   │   Safe placement zone       │   │
+│   │   (characters can be here)  │   │
+│   │                             │   │
+│   └─────────────────────────────┘   │
+│               deadzone (charSize) → │
+└─────────────────────────────────────┘
+```
+
 **Algorithm Steps:**
 
 1. Calculate personal radius based on character count
-2. For each character (up to `count`):
-   - Generate random x, y position within viewport bounds
+2. Define deadzone equal to character size on all viewport edges
+3. For each character (up to `count`):
+   - Generate random x, y position within safe zone (deadzone to viewport - deadzone)
    - Check if position is valid:
      - Not in exclusion zone (central content area)
      - No collision with existing characters
    - If valid, place character
    - If invalid, retry (up to 200 attempts)
-   - Fallback: place anyway if max attempts reached
+   - Fallback: place with same constraints if max attempts reached
 
 **Pseudocode:**
 
 ```typescript
+const deadzoneEdge = charSize;
+
 for (let i = 0; i < count; i++) {
   let placed = false;
   let attempts = 0;
 
   while (!placed && attempts < maxAttempts) {
-    const x = random(padding, viewportWidth - padding);
-    const y = random(padding, viewportHeight - padding);
+    const x = random(deadzoneEdge, viewportWidth - deadzoneEdge);
+    const y = random(deadzoneEdge, viewportHeight - deadzoneEdge);
 
     if (isValidPosition(x, y)) {
       positions.push({ x, y });
@@ -122,9 +150,12 @@ for (let i = 0; i < count; i++) {
     attempts++;
   }
 
-  // Fallback placement
+  // Fallback placement (still respects deadzone)
   if (!placed) {
-    positions.push({ x: random(...), y: random(...) });
+    positions.push({
+      x: random(deadzoneEdge, viewportWidth - deadzoneEdge),
+      y: random(deadzoneEdge, viewportHeight - deadzoneEdge),
+    });
   }
 }
 ```
@@ -349,7 +380,7 @@ return charSize * 2.5; // Desktop
 
 // Positioning constraints
 const maxAttempts = 200; // Max placement attempts
-const padding = charSize; // Viewport edge padding
+const deadzoneEdge = charSize; // Viewport edge deadzone (ensures full visibility)
 ```
 
 **In `FloatingKanji.tsx`:**

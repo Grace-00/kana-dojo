@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { generateButtonBorderColor } from '@/features/Preferences/data/themes/themes';
 import { cn } from '@/shared/lib/utils';
 
-const useButtonStyle = true;
+const useButtonStyle = false;
 
 interface FloatingKanjiProps {
   char: string;

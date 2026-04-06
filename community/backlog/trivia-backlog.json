@@ -41,7 +41,7 @@
     "difficulty": "easy",
     "answers": ["Honshu", "Hokkaido", "Shikoku", "Kyushu"],
     "correctIndex": 1,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -68,7 +68,7 @@
     "difficulty": "easy",
     "answers": ["Seijin Shiki", "Hanabi Taikai", "Setsubun", "Obon"],
     "correctIndex": 1,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -913,7 +913,7 @@
     "difficulty": "medium",
     "answers": ["Sapporo", "Sendai", "Fukuoka", "Okayama"],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

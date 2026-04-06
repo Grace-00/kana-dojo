@@ -356,7 +356,7 @@
   {
     "id": 60,
     "fact": "Japan has an island called Okunoshima overrun by friendly wild rabbits - formerly a secret chemical weapons manufacturing site.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -836,7 +836,7 @@
   {
     "id": 140,
     "fact": "Japan has smart toilets that analyze your waste and display health metrics on a screen - some even save data to apps.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1322,7 +1322,7 @@
   {
     "id": 221,
     "fact": "Japan has 'shuumatsu okashi' trends where limited-edition sweets appear for a season and then disappear, making them collectible.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

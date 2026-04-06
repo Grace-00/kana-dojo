@@ -566,7 +566,7 @@
     "english": "I, Giorno Giovanna, have a dream! (alt wording 5)",
     "anime": "JoJo's Bizarre Adventure: Golden Wind",
     "character": "Giorno Giovanna",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1028,7 +1028,7 @@
     "english": "Running away can take courage too. (alt wording 51)",
     "anime": "Mob Psycho 100",
     "character": "Arataka Reigen",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -1058,7 +1058,7 @@
     "english": "Yes! Yes! Yes! Yes! (alt wording 2) (alt wording 54)",
     "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "character": "DIO",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
