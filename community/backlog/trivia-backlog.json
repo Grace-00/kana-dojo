@@ -321,7 +321,7 @@
     "difficulty": "medium",
     "answers": ["Katakana", "Hiragana", "Kanji", "Romaji"],
     "correctIndex": 0,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
